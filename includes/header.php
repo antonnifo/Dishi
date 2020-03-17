@@ -76,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="manage_orders.php">Orders</a>
-                                    <a href="manage_customers.php">Customers</a>
+                                    <a href="manage_users.php">Users</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

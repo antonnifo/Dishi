@@ -22,17 +22,31 @@
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-users user1 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>1019</strong></h5>
+                      <h5><strong>      <?php 
+												
+												$query = "SELECT count(DISTINCT email) as total from orders_ ";
+												$result = mysqli_query($con, $query);
+												confirm_query($result);
+												$data = mysqli_fetch_assoc($result);
+												echo $data['total'];
+												?></strong></h5>
                       <span>Unique Visitors</span>
                     </div>
                 </div>
         	</div>
         	<div class="col-md-3 widget widget1">
         		<div class="r3_counter_box">
-                    <i class="pull-left fa fa-comment user2 icon-rounded"></i>
+                    <i class="pull-left fa fa-user user2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>1012</strong></h5>
-                      <span>New Users</span>
+                      <h5><strong>      <?php 
+												
+												$query = "SELECT count(*) as total from admin";
+												$result = mysqli_query($con, $query);
+												confirm_query($result);
+												$data = mysqli_fetch_assoc($result);
+												echo $data['total'];
+												?></strong></h5>
+                      <span>System Users</span>
                     </div>
                 </div>
         	</div>
@@ -151,8 +165,8 @@
 			        <div class="text-center">C4 foods</div>
 			    </div>
 	<div class="tiles-body red">                   <?php 
-										$hotel='c4 foods';		
-										$query = "SELECT count(*) as total from orders_";
+												
+										$query = "SELECT count(order_id) as total from orders_ WHERE restrant='c4 foods'";
 										$result = mysqli_query($con, $query);
 										confirm_query($result);
 										$data = mysqli_fetch_assoc($result);
@@ -165,7 +179,14 @@
 			    <div class="tiles-head tiles_blue1">
 			        <div class="text-center">Java </div>
 			    </div>
-			    <div class="tiles-body blue1">30</div>
+			    <div class="tiles-body blue1">          <?php 
+												
+												$query = "SELECT count(order_id) as total from orders_ WHERE restrant='java'";
+												$result = mysqli_query($con, $query);
+												confirm_query($result);
+												$data = mysqli_fetch_assoc($result);
+												echo $data['total'];
+												?></div>
 			  </a>
 		   </div>
 		   <div class="clearfix"> </div>
@@ -176,7 +197,16 @@
 			    <div class="tiles-head fb1">
 			        <div class="text-center">KFC</div>
 			    </div>
-			    <div class="tiles-body fb2">10</div>
+			    <div class="tiles-body fb2">
+				<?php
+		
+										$query = "SELECT count(order_id) as total from orders_ WHERE restrant='KFC'";
+										$result = mysqli_query($con, $query);
+										confirm_query($result);
+										$data = mysqli_fetch_assoc($result);
+										echo $data['total'];
+										?>
+										</div>
 			 </a>
 		   </div>
 		   <div class="col-md-6 col_1_of_2 span_1_of_2">
@@ -184,7 +214,14 @@
 			    <div class="tiles-head tw1">
 			        <div class="text-center">Chicken INN</div>
 			    </div>
-			    <div class="tiles-body tw2">30</div>
+			    <div class="tiles-body tw2">     <?php 
+											
+										$query = "SELECT count(order_id) as total from orders_ WHERE restrant='inn'";
+										$result = mysqli_query($con, $query);
+										confirm_query($result);
+										$data = mysqli_fetch_assoc($result);
+										echo $data['total'];
+										?></div>
 			  </a>
 		   </div>
 		   <div class="clearfix"> </div>
